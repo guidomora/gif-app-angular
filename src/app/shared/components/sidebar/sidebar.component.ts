@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, } from '@angular/core';
 import { GifService } from '../../../gifs/services/gif.service';
 
 @Component({
@@ -8,12 +8,20 @@ import { GifService } from '../../../gifs/services/gif.service';
   styleUrl: './sidebar.component.css',
 })
 export class SidebarComponent {
+
+
    constructor(
     // inyeccion de servicio
     private gifService:GifService
    ) {}
 
-   get tags(){
+   searchTag(tag:string):void{
+    this.gifService.searchTag(tag)
+   }
+
+   get tags():string[] {
     return this.gifService.tagsHistory
    }
+
+
  }
