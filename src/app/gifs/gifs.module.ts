@@ -4,14 +4,20 @@ import { HomePageComponent } from './components/home/home.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { CardListComponent } from './components/card-list/card-list.component';
 import { GifCardComponent } from './components/gif-card/gif-card.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
 @NgModule({
-  declarations: [HomePageComponent, SearchBoxComponent, CardListComponent, GifCardComponent],
+  declarations: [
+    HomePageComponent, 
+    SearchBoxComponent, 
+    CardListComponent, 
+    GifCardComponent],
   exports:[HomePageComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ]
 })
 export class GifsModule { }
